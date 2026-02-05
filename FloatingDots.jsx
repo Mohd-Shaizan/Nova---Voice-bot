@@ -1288,10 +1288,6 @@ const speak = (text, rate = 2.5) => {
     }
   }, [isClient]);
 
-  const handleClick = () => {
-    startListening();
-    setShowOverlay(false);
-  };
 
   useEffect(() => {
     if (isListening) {
@@ -1387,13 +1383,6 @@ const speak = (text, rate = 2.5) => {
   </div>
 );
 
-Dot.propTypes = {
-  initialPosition: PropTypes.arrayOf(PropTypes.number).isRequired,
-  targetPosition: PropTypes.instanceOf(THREE.Vector3).isRequired,
-  animationState: PropTypes.string.isRequired,
-  mousePosition: PropTypes.instanceOf(THREE.Vector3),
-  particleColor: PropTypes.instanceOf(THREE.Color).isRequired,
-};
 
 Scene.propTypes = {
   animationState: PropTypes.string.isRequired,
@@ -1403,3 +1392,4 @@ const MemoizedScene = memo(Scene);
 }
 
 export default VoiceBotWithAnimations;
+
